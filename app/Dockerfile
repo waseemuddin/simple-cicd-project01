@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# webbook test
+# webbook test git checkout
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
