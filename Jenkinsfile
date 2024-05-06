@@ -1,28 +1,10 @@
-
 pipeline {
     agent any
 
     stages {
         stage("Code checkout") {
             steps {
-                git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
-            }
-        }
-    }
-}
-
-
-
-
-/* jenins file code
-
-pipeline {
-    agent any
-
-    stages {
-        stage("Code checkout") {
-            steps {
-                git branch: 'main', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
+               git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
             }
         }
         stage("image build") {
@@ -52,6 +34,3 @@ pipeline {
         
     }
 }
-
-
-*/
