@@ -1,4 +1,4 @@
-# Simple CICD Pipeline Project 
+# Simple CICD Pipeline Project - Todo Application 
 
 Please follow the below links for more updates and Projects.
 
@@ -6,14 +6,16 @@ Please follow the below links for more updates and Projects.
 
 💾 <a href="https://www.youtube.com/@waseeemuddin" target="_blank">Youtube Link</a>
 
-# GIT Lab 01 - How to Push Project folder to Remote Repository
+## Prerequisites
+1. EC2 Machine - Medium Size will be prefreable 
+2. Docker Setup on EC2 Machine.
+3. Jenkins Setup - either you use manuall installation or you can use jenkins image.
+4. Github Account - you need a github account to automate the pipleline 
 
-In this lab we will look at How to pull our local repo/project to remote repository means the Github account
+Here is Archietchure Diagram 
+<img src="img/01.png" alt="diagram" width="500" height="500">
 
-
-<img src="imges/diagram.png" alt="Github Diagram" width="500" height="500">
-
-# ![git-status](imges/01.png)
+# ![git-img](img/01.png)
 
 
 ### Step 01 - Make a Directory/Folder on your local system windows or Ubuntu
