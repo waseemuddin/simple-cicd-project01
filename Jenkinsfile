@@ -14,7 +14,7 @@ pipeline {
 
 
 
-/* jenins file
+/* jenins file code
 
 pipeline {
     agent any
