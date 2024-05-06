@@ -1,6 +1,6 @@
 # syntaxdocker/dockerfile:1
 
-# webbook testing 
+# webbook testing code
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
