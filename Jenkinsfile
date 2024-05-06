@@ -1,26 +1,10 @@
 pipeline {
-    agent none
+    agent any
+
     stages {
-        stage('build') {
+        stage("Code checkout") {
             steps {
-                script {
-                    echo "Building the application..."
-                    echo "Start webhook in jenkins-jobs branch..."
-                }
-            }
-        }
-        stage('test') {
-            steps {
-                script {
-                    echo "Testing the application..."
-                }
-            }
-        }
-        stage('deploy') {
-            steps {
-                script {
-                    echo "Deploying the application..."
-                }
+                git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
             }
         }
     }
