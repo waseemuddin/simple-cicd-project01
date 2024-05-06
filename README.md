@@ -17,7 +17,11 @@ Here is Archietchure Diagram
 # ![git-img](img/01.png)
 
 
-### Step 01 - Make a Directory/Folder on your local system windows or Ubuntu
+### Step 01 - Create EC2 Machine 
+
+# ![git-ec2](img/02.png)
+# ![git-ec2](img/03.png)
+# ![git-ec2](img/04.png)
 
 ``` shell
 $ mkdir Git-for-beginners
