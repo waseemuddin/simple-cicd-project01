@@ -14,7 +14,7 @@ pipeline {
 
 
 
-/* jenins file tesitngccc
+/* jenins file
 
 pipeline {
     agent any
