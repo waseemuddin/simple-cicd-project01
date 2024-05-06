@@ -19,7 +19,7 @@ Here is Archietchure Diagram
 
 ### Step 01 - Create EC2 Machine 
 
-# ![git-ec2](img/02.png)
+# ![git-ec2](img/2.png)
 # ![git-ec3](img/03.png)
 # ![git-ec4](img/04.png)
 
