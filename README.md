@@ -13,7 +13,6 @@ Please follow the below links for more updates and Projects.
 4. Github Account - you need a github account to automate the pipleline 
 
 Here is Archietchure Diagram 
-<img src="img/01.png" alt="diagram" width="500" height="500">
 
 # ![git-img](img/01.png)
 
