@@ -134,8 +134,15 @@ The latest and best approch is to using Jenkinsfile
 
 # ![git-ec6](img/16.JPG)
 
+# ![git-ec6](img/17.JPG)
 
+# ![git-ec6](img/17.JPG)
 
+# ![git-ec6](img/18.JPG)
+
+# ![git-ec6](img/19.JPG)
+
+# ![git-ec6](img/20.JPG)
 
 
 
