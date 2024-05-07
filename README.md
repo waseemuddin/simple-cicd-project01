@@ -33,13 +33,37 @@ $ sudo ssh -i "key.pem" ubuntu@<ip-addressmkdir>
 ```
 # ![git-ec6](img/06.JPG)
 
+### Step 03 - Install docker on Ec2 machine
+
+In step 3 you need to install the docker on your ec2 machine.
+docker installation commands are simple and easily docker setup.
+You can find installation steups from as below address : https://docs.docker.com/engine/install/ubuntu/
+Here is the docker script to be execute on Ubuntu 22.04
+
+1.Set up Docker's apt repository.
 
 ``` shell
-$ mkdir Git-for-beginners
-$ cd Git-for-beginners
-$ git status
+$ # Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
 ```
-# ![git-status](imges/02.png)
+2. Install the Docker packages.
+``` shell
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+# ![git-ec6](img/07.JPG)
+
 
 ### Step 02 - create some files in the git local directory/folder
 
