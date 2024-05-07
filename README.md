@@ -22,6 +22,7 @@ Here is Archietchure Diagram
 # ![git-ec2](img/2.png)
 # ![git-ec3](img/03.png)
 # ![git-ec4](img/04.png)
+# ![git-ec5](img/04.png)
 
 ``` shell
 $ mkdir Git-for-beginners
