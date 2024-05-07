@@ -22,7 +22,17 @@ Here is Archietchure Diagram
 # ![git-ec2](img/2.png)
 # ![git-ec3](img/03.png)
 # ![git-ec4](img/04.png)
-# ![git-ec5](img/04.png)
+# ![git-ec5](img/05.png)
+
+### Step 02 - Connect EC2 Machine  
+
+Now next step is to connect your EC2 Ubuntu Machine using SSH and make sure you're in root user or use 'sudo'
+
+``` shell
+$ sudo ssh -i "key.pem" ubuntu@<ip-addressmkdir> 
+```
+# ![git-ec6](img/06.png)
+
 
 ``` shell
 $ mkdir Git-for-beginners
