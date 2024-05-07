@@ -62,7 +62,23 @@ sudo apt-get update
 ``` shell
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-# ![git-ec6](img/07.JPG)
+# ![git-ec6](img/7.1.JPG)
+
+
+### Step 03 - Installation of Jenkins 
+
+Next step is to installation of Jenkins. There are two ways to install/setup jenkins
+1. Manuall installation or stand-alone installation
+2. container based installation which is flexiable and easy to handle and light weight
+Here we setup the jenkins via container based installation.
+
+``` shell
+$ docker run -p 8080:8080 -p 50000:50000 -d \
+-v jenkins_home:/var/jenkins_home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker): /usr/bin/docker jenkins/jenkins:lts
+```
+# ![git-ec6](img/7.2.JPG)
 
 
 ### Step 02 - create some files in the git local directory/folder
