@@ -80,6 +80,24 @@ $ docker run -p 8080:8080 -p 50000:50000 -d \
 ```
 # ![git-ec6](img/7.2.JPG)
 
+After running the above command jenkins container has been created and started
+
+# ![git-ec6](img/08.JPG)
+
+Now you can type blow ip addess if your ec2 machine and check weather your jenkins is accessiable or not 
+But make sure that the port should be added on your EC2 Security Group
+
+# ![git-ec6](img/09.JPG)
+# ![git-ec6](img/10.JPG)
+
+``` shell
+$ localhost:8080
+$ <ip-address>:porty
+
+```
+# ![git-ec6](img/11.JPG)
+
+
 
 ### Step 02 - create some files in the git local directory/folder
 
