@@ -97,6 +97,46 @@ $ <ip-address>:porty
 ```
 # ![git-ec6](img/11.JPG)
 
+Now, In order to get the jenkins password. you have to login or access the jenkins container
+
+``` shell
+$ docker exec -it <container-id> bash
+$ docker exec -it 98760878abree bash
+
+```
+# ![git-ec6](img/12.JPG)
+
+### Step 04 - Jenkins Pipleline Setup
+
+Till now, we have setup the EC2 server and configure the docker and our jenkins setup
+Now in this step we can see how we can create the jenkins simple pipeline 
+
+Now before create the pipeline and connect your git-repo to jenkins. please make sure you have upto date
+Git repository. To download the update git here are below links
+
+``` shell
+$ https://github.com/waseemuddin/simple-cicd-project01.git # this is  my link repo where i have update all files and codes
+$ https://github.com/docker/getting-started-app.git # and here is the doker official repo
+
+```
+Now let get start and create the pipleline
+
+Login jenkins using same password as create above.
+
+# ![git-ec6](img/13.JPG)
+
+# ![git-ec6](img/14.JPG)
+
+There are 2 ways to creating the pipeline code either inline pipleline or pipleline script with SCM means using Jenkinsfile
+The latest and best approch is to using Jenkinsfile
+
+# ![git-ec6](img/15.JPG)
+
+# ![git-ec6](img/16.JPG)
+
+
+
+
 
 
 ### Step 02 - create some files in the git local directory/folder
