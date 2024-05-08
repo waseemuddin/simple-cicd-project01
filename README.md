@@ -92,6 +92,7 @@ But make sure that the port should be added on your EC2 Security Group
 
 ``` shell
 $ localhost:8080
+
 $ <ip-address>:porty
 
 ```
@@ -101,6 +102,7 @@ Now, In order to get the jenkins password. you have to login or access the jenki
 
 ``` shell
 $ docker exec -it <container-id> bash
+
 $ docker exec -it 98760878abree bash
 
 ```
@@ -116,6 +118,7 @@ Git repository. To download the update git here are below links
 
 ``` shell
 $ https://github.com/waseemuddin/simple-cicd-project01.git # this is  my link repo where i have update all files and codes
+
 $ https://github.com/docker/getting-started-app.git # and here is the doker official repo
 
 ```
@@ -134,9 +137,26 @@ The latest and best approch is to using Jenkinsfile
 
 # ![git-ec6](img/16.JPG)
 
-# ![git-ec6](img/17.JPG)
+After setting up the pipleline and connected to git repo. now lets test the below code and see your our pipeline works or not
+
+First create the Jenkinsfile in your git repo and add the below code in Jenkinsfile
+
+``` shell
+
+pipeline {
+    agent any
+    stages {
+        stage("Code checkout") {
+            steps {
+               git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
+            }
+        }
+    }
+}
+```
 
 # ![git-ec6](img/17.JPG)
+
 
 # ![git-ec6](img/18.JPG)
 
