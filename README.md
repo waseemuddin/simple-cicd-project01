@@ -7,6 +7,7 @@ Please follow the below links for more updates and Projects.
 💾 <a href="https://www.youtube.com/@waseeemuddin" target="_blank">Youtube Link</a>
 
 ## Prerequisites
+
 1. EC2 Machine - Medium Size will be prefreable 
 2. Docker Setup on EC2 Machine.
 3. Jenkins Setup - either you use manuall installation or you can use jenkins image.
