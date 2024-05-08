@@ -142,7 +142,6 @@ After setting up the pipleline and connected to git repo. now lets test the belo
 First create the Jenkinsfile in your git repo and add the below code in Jenkinsfile
 
 ``` shell
-
 pipeline {
     agent any
     stages {
@@ -157,74 +156,66 @@ pipeline {
 
 # ![git-ec6](img/17.JPG)
 
+Now Jenkinsfile has been updated. Goto pileline and press the "Build Now" to check the pipeline fetch git repo and shows the stage view. 
 
 # ![git-ec6](img/18.JPG)
 
+### Step 05 - Jenkins Set Webhook - Automate the Pileline Process 
+
 # ![git-ec6](img/19.JPG)
+
+Now in order to autmoate the jenkins pipeline, we need to set the git webhook and connect your jenkins server to git webhook
+
+just to repository then goto setting and click webhooks. Here you have to mention the jenkins server ip and port as per below format
+
+Aftet setting the webhook. lets make some changes in git repo files anything you want like add some comments and push the code.
+
+As soon as push triggerd jenkins server auto fetch and auto build start automatically. As per given video.
 
 # ![git-ec6](img/20.JPG)
 
+### Step 05 - Final Step - Run Complete code
 
+Now in last step we create the complete pipeline steps from Code Checkout to Container Creating steps
 
-### Step 02 - create some files in the git local directory/folder
-
-``` shell
-$ mkdir imges 
-$ mkdir js
-$ mkdir css
-$ mkdir project 
-$ touch css/front.css
-$ touch js/mysim.js
-$ touch index.php
-```
-
-
-### Step 03 - After editing and adding completed, run the below commands
+Updated code is available in Jenkins-File
 
 ``` shell
-$ git init
-$ git status
-$ git add .
-$ git commit
+pipeline {
+    agent any
+
+    stages {
+        stage("Code checkout") {  # Git Repo Check-out Step
+            steps {
+               git branch: 'main', credentialsId: 'github-id', url: 'https://github.com/waseemuddin/simple-cicd-project01.git'
+            }
+        }
+        stage("image build") {  # Image Build Step and make sure you have to create the empty repository on your Docker-Hub Account
+            steps {
+                sh 'docker image build -t waseem63/mydockerapp:v$BUILD_ID .'
+                sh 'docker image tag waseem63/mydockerapp:v$BUILD_ID waseem63/mydockerapp:latest'
+            }
+        }
+        stage("Image Push") {  # Image Push Step and connect to your docker-hub account. Also remove the image so the storage can be maintain
+            steps { 
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-id', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    
+                    sh "echo $PASS | docker login -u $USER --password-stdin"
+                    sh 'docker push waseem63/mydockerapp:v$BUILD_ID'
+                    sh 'docker push waseem63/mydockerapp:latest'
+                    sh 'docker rmi waseem63/mydockerapp:v$BUILD_ID  waseem63/mydockerapp:latest'
+                }
+            }
+            
+        }
+        stage("Container Creating") { # last step is to fetch the lastet or recent image and create docker container automatically.
+            steps {
+                sh 'docker run -itd --name todoapp -p 3000:3000 waseem63/mydockerapp:latest'
+            
+            }
+        }
+        
+    }
+}
+
 ```
-# ![git-init](imges/03.png)
-
-# ![git-status](imges/04.png)
-
-# ![git-add](imges/05.png)
-
-# ![git-commit](imges/06.png)
-
-Our local repository files are commited and now its time to push into remote repository
-
-# ![git-local](imges/07.png)
-
-To push your code to remote repository, first you have to create the empty reposity on your github account
-
-### Step 04 - Create Empty Repo on your Github Account
- 
-Got your GitHub accunt profile and create a new repository
-
- # ![git-local](imges/10.png)
-
- # ![git-local](imges/11.png)
-
-
-### Step 05 - Push Local Repo to Remote Repo
-
-Now its time to push your local repository to your remote repository means your Github account
-
- # ![git-local](imges/12.png)
-
- # ![git-local](imges/13.png)
-
- # ![git-local](imges/14.png)
-
- # ![git-local](imges/15.png)
-
-
-As you see all local repository files/folders are now push to remote repository
-
-
- # ![git-local](imges/16.png)
-
