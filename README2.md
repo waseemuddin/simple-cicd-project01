@@ -101,13 +101,9 @@ Now that we have set up our EC2 server, Docker, and Jenkins, let's create a simp
 
 Before creating the pipeline, ensure your Git repository is up to date. Use the following links to update:
 
-``` shell
-$ https://github.com/waseemuddin/simple-cicd-project01.git # this is  my link repo where i have update all files and codes
 
-$ https://github.com/docker/getting-started-app.git # and here is the doker official repo
-
-```
 - 💾 [Simple CICD Project Repo](https://github.com/waseemuddin/simple-cicd-project01.git)
+
 - 💾 [Docker Official Repo](https://github.com/docker/getting-started-app.git)
 
 Log in to Jenkins using the password generated during setup.
@@ -199,15 +195,9 @@ pipeline {
 }
 ```
 
-
 ![EC2 Setup Step 19](img/20.JPG)
 
 Now, any push to the repository will trigger the Jenkins pipeline automatically.
 
-Now, run the pipeline to build and deploy your application!
-
-Ensure you have the necessary credentials configured in Jenkins for Docker Hub access.
-
 Congratulations! You have successfully set up a CI/CD pipeline for your Todo Application.
 
-vbnet

@@ -1,95 +1,80 @@
 # Simple CICD Pipeline Project - Todo Application 
 
-Please follow the below links for more updates and Projects.
-
-💾 <a href="https://shaikhwaseem.com" target="_blank">shahikhwaseem.com</a> <br>
-
-💾 <a href="https://www.youtube.com/@waseeemuddin" target="_blank">Youtube Link</a>
+Welcome to the Simple CICD Pipeline Project for a Todo Application. Follow the steps below to set up your Continuous Integration and Continuous Deployment pipeline.
 
 ## Prerequisites
+Ensure you have the following prerequisites before proceeding:
+1. **EC2 Machine**: Medium Size preferred.
+2. **Docker Setup** on EC2 Machine.
+3. **Jenkins Setup**: You can either manually install Jenkins or use a Jenkins image.
+4. **GitHub Account**: You need a GitHub account to automate the pipeline.
 
-1. EC2 Machine - Medium Size will be prefreable 
-2. Docker Setup on EC2 Machine.
-3. Jenkins Setup - either you use manuall installation or you can use jenkins image.
-4. Github Account - you need a github account to automate the pipleline 
+For more updates and projects, visit:
+- 💾 [shaikhwaseem.com](https://shaikhwaseem.com)
+- 💾 [YouTube Channel](https://www.youtube.com/@waseeemuddin)
 
-Here is Archietchure Diagram 
-
-# ![git-img](img/01.png)
-
+## Architecture Diagram
+![Architecture Diagram](img/01.png)
 
 ### Step 01 - Create EC2 Machine 
-
-# ![git-ec2](img/2.png)
-# ![git-ec3](img/03.png)
-# ![git-ec4](img/04.png)
-# ![git-ec5](img/05.JPG)
+![EC2 Setup Step 1](img/2.png)
+![EC2 Setup Step 2](img/03.png)
+![EC2 Setup Step 3](img/04.png)
+![EC2 Setup Step 4](img/05.JPG)
 
 ### Step 02 - Connect EC2 Machine  
-
-Now next step is to connect your EC2 Ubuntu Machine using SSH and make sure you're in root user or use 'sudo'
-
-``` shell
-$ sudo ssh -i "key.pem" ubuntu@<ip-addressmkdir> 
+Connect to your EC2 Ubuntu Machine using SSH. Make sure you're in the root user or use 'sudo'.
+```shell
+$ sudo ssh -i "key.pem" ubuntu@<ip-address>
 ```
-# ![git-ec6](img/06.JPG)
 
-### Step 03 - Install docker on Ec2 machine
+![EC2 Setup Step 6](img/06.JPG)
 
-In step 3 you need to install the docker on your ec2 machine.
-docker installation commands are simple and easily docker setup.
-You can find installation steups from as below address : https://docs.docker.com/engine/install/ubuntu/
-Here is the docker script to be execute on Ubuntu 22.04
+### Step 03 - Install Docker on EC2 Machine
+Install Docker on your EC2 machine. Use the following commands:
 
-1.Set up Docker's apt repository.
+### Set up Docker's apt repository.
 
-``` shell
-$ # Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-echo \
+```shell
+$ sudo apt-get update
+$ sudo apt-get install ca-certificates curl
+$ sudo install -m 0755 -d /etc/apt/keyrings
+$ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+$ sudo chmod a+r /etc/apt/keyrings/docker.asc
+$ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+$ sudo apt-get update
 
-```
-2. Install the Docker packages.
-``` shell
+# Install Docker packages.
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-# ![git-ec6](img/7.1.JPG)
+![EC2 Setup Step 7.1](img/7.1.JPG)
 
+### Step 04 - Installation of Jenkins
 
-### Step 03 - Installation of Jenkins 
+Install Jenkins either manually or using container-based installation. Here's the container-based installation command:
 
-Next step is to installation of Jenkins. There are two ways to install/setup jenkins
-1. Manuall installation or stand-alone installation
-2. container based installation which is flexiable and easy to handle and light weight
-Here we setup the jenkins via container based installation.
-
-``` shell
+```shell
 $ docker run -p 8080:8080 -p 50000:50000 -d \
 -v jenkins_home:/var/jenkins_home \
 -v /var/run/docker.sock:/var/run/docker.sock \
--v $(which docker): /usr/bin/docker jenkins/jenkins:lts
+-v $(which docker):/usr/bin/docker jenkins/jenkins:lts
 ```
-# ![git-ec6](img/7.2.JPG)
 
-After running the above command jenkins container has been created and started
+![EC2 Setup Step 7.2](img/7.2.JPG)
 
-# ![git-ec6](img/08.JPG)
+After running the above command, Jenkins container will be created and started. Access Jenkins using the IP address of your EC2 machine followed by port 8080.
+
+![EC2 Setup Step 8](img/08.JPG)
 
 Now you can type blow ip addess if your ec2 machine and check weather your jenkins is accessiable or not 
 But make sure that the port should be added on your EC2 Security Group
 
 # ![git-ec6](img/09.JPG)
 # ![git-ec6](img/10.JPG)
+
 
 ``` shell
 $ localhost:8080
@@ -109,34 +94,30 @@ $ docker exec -it 98760878abree bash
 ```
 # ![git-ec6](img/12.JPG)
 
-### Step 04 - Jenkins Pipleline Setup
 
-Till now, we have setup the EC2 server and configure the docker and our jenkins setup
-Now in this step we can see how we can create the jenkins simple pipeline 
+### Step 04 - Jenkins Pipeline Setup
 
-Now before create the pipeline and connect your git-repo to jenkins. please make sure you have upto date
-Git repository. To download the update git here are below links
+Now that we have set up our EC2 server, Docker, and Jenkins, let's create a simple Jenkins pipeline.
 
-``` shell
-$ https://github.com/waseemuddin/simple-cicd-project01.git # this is  my link repo where i have update all files and codes
+Before creating the pipeline, ensure your Git repository is up to date. Use the following links to update:
 
-$ https://github.com/docker/getting-started-app.git # and here is the doker official repo
 
-```
-Now let get start and create the pipleline
+- 💾 [Simple CICD Project Repo](https://github.com/waseemuddin/simple-cicd-project01.git)
 
-Login jenkins using same password as create above.
+- 💾 [Docker Official Repo](https://github.com/docker/getting-started-app.git)
 
-# ![git-ec6](img/13.JPG)
+Log in to Jenkins using the password generated during setup.
 
-# ![git-ec6](img/14.JPG)
 
-There are 2 ways to creating the pipeline code either inline pipleline or pipleline script with SCM means using Jenkinsfile
-The latest and best approch is to using Jenkinsfile
+![EC2 Setup Step 13](img/13.JPG)
 
-# ![git-ec6](img/15.JPG)
+Choose 'Pipeline' and 'Pipeline Script from SCM', using the Jenkinsfile provided in your Git repository.
+![EC2 Setup Step 14](img/14.JPG)
 
-# ![git-ec6](img/16.JPG)
+![EC2 Setup Step 15](img/15.JPG)
+
+![EC2 Setup Step 16](img/16.JPG)
+
 
 After setting up the pipleline and connected to git repo. now lets test the below code and see your our pipeline works or not
 
@@ -154,32 +135,26 @@ pipeline {
     }
 }
 ```
-
-# ![git-ec6](img/17.JPG)
+![EC2 Setup Step 17](img/17.JPG)
 
 Now Jenkinsfile has been updated. Goto pileline and press the "Build Now" to check the pipeline fetch git repo and shows the stage view. 
 
-# ![git-ec6](img/18.JPG)
+![EC2 Setup Step 18](img/18.JPG)
 
-### Step 05 - Jenkins Set Webhook - Automate the Pileline Process 
 
-# ![git-ec6](img/19.JPG)
+### Step 05 - Jenkins Set Webhook - Automate the Pipeline Process
 
-Now in order to autmoate the jenkins pipeline, we need to set the git webhook and connect your jenkins server to git webhook
+To automate the Jenkins pipeline, we'll set up a Git webhook. Navigate to your repository settings and add a webhook with the Jenkins server's IP and port.
 
-just to repository then goto setting and click webhooks. Here you have to mention the jenkins server ip and port as per below format
+![EC2 Setup Step 19](img/19.JPG)
 
-Aftet setting the webhook. lets make some changes in git repo files anything you want like add some comments and push the code.
 
-As soon as push triggerd jenkins server auto fetch and auto build start automatically. As per given video.
+### Step 06 - Final Step - Run Complete Code
 
-# ![git-ec6](img/20.JPG)
+In the final step, we create a complete pipeline from code checkout to container creation.
 
-### Step 05 - Final Step - Run Complete code
+The updated code is available in the Jenkinsfile. Ensure you have an empty repository on your Docker Hub account for image storage.
 
-Now in last step we create the complete pipeline steps from Code Checkout to Container Creating steps
-
-Updated code is available in Jenkins-File
 
 ``` shell
 pipeline {
@@ -218,5 +193,11 @@ pipeline {
         
     }
 }
-
 ```
+
+![EC2 Setup Step 19](img/20.JPG)
+
+Now, any push to the repository will trigger the Jenkins pipeline automatically.
+
+Congratulations! You have successfully set up a CI/CD pipeline for your Todo Application.
+
