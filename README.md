@@ -198,7 +198,7 @@ pipeline {
 }
 ```
 
-![EC2 Setup Step 19](img/21.JPG)
+![EC2 Setup Step 21](img/21.png)
 
 ![EC2 Setup Step gif02](img/02.gif)
 
