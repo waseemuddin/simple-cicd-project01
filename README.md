@@ -198,7 +198,9 @@ pipeline {
 }
 ```
 
-![EC2 Setup Step 19](img/20.JPG)
+![EC2 Setup Step 19](img/21.JPG)
+
+![EC2 Setup Step gif02](img/02.gif)
 
 Now, any push to the repository will trigger the Jenkins pipeline automatically.
 
