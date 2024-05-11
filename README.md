@@ -1,10 +1,10 @@
 # Simple CICD Pipeline Project - Todo Application 
 
-Welcome to the Simple CICD Pipeline Project for a Todo Application. Follow the steps below to set up your Continuous Integration and Continuous Deployment pipeline.
+This is very basic CICD Pipeline Project for a ToDo Application. Follow the steps below to set up your Continuous Integration and Continuous Deployment pipeline.
 
 ## Prerequisites
 Ensure you have the following prerequisites before proceeding:
-1. **EC2 Machine**: Medium Size preferred.
+1. **EC2 Machine**: Medium Size preferred. (4/GB RAM and 2 Core Processor)
 2. **Docker Setup** on EC2 Machine.
 3. **Jenkins Setup**: You can either manually install Jenkins or use a Jenkins image.
 4. **GitHub Account**: You need a GitHub account to automate the pipeline.
@@ -97,7 +97,7 @@ $ docker exec -it 98760878abree bash
 
 ### Step 04 - Jenkins Pipeline Setup
 
-Now that we have set up our EC2 server, Docker, and Jenkins, let's create a simple Jenkins pipeline.
+Now that we have setup our EC2 server, Docker, and Jenkins, let's create a simple Jenkins pipeline.
 
 Before creating the pipeline, ensure your Git repository is up to date. Use the following links to update:
 
