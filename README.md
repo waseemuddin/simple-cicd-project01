@@ -139,6 +139,9 @@ pipeline {
 
 Now Jenkinsfile has been updated. Goto pileline and press the "Build Now" to check the pipeline fetch git repo and shows the stage view. 
 
+![EC2 Setup Step gif01](img/01.gif)
+
+
 ![EC2 Setup Step 18](img/18.JPG)
 
 
