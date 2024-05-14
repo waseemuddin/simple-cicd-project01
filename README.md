@@ -84,7 +84,7 @@ $ <ip-address>:porty
 ```
 # ![git-ec6](img/11.JPG)
 
-Now, In order to get the jenkins password. you have to login or access the jenkins container
+Now, In order to get the Jenkins password. you have to login or access the Jenkins container
 
 ``` shell
 $ docker exec -it <container-id> bash
@@ -119,7 +119,7 @@ Choose 'Pipeline' and 'Pipeline Script from SCM', using the Jenkinsfile provided
 ![EC2 Setup Step 16](img/16.JPG)
 
 
-After setting up the pipleline and connected to git repo. now lets test the below code and see your our pipeline works or not
+After setting up the pipeline and connecting to the git repo. now let's test the below code and see your our pipeline works or not
 
 First create the Jenkinsfile in your git repo and add the below code in Jenkinsfile
 
