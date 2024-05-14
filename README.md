@@ -69,7 +69,7 @@ After running the above command, Jenkins container will be created and started. 
 
 ![EC2 Setup Step 8](img/08.JPG)
 
-Now you can type blow ip addess if your ec2 machine and check weather your jenkins is accessiable or not 
+Now you can type blow ip address if your ec2 machine and check whether your Jenkins is accessible or not 
 But make sure that the port should be added on your EC2 Security Group
 
 # ![git-ec6](img/09.JPG)
