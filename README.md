@@ -54,7 +54,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugi
 
 ### Step 04 - Installation of Jenkins
 
-Install Jenkins either manually or using container-based installation. Here's the container-based installation command:
+Install Jenkins either manually or using container-based installation. Here's the container-based installation command.
 
 ```shell
 $ docker run -p 8080:8080 -p 50000:50000 -d \
