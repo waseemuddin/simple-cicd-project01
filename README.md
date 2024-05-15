@@ -106,7 +106,7 @@ Before creating the pipeline, ensure your Git repository is up to date. Use the 
 
 - 💾 [Docker Official Repo](https://github.com/docker/getting-started-app.git)
 
-Log in to Jenkins using the password generated during setup.
+Log in to Jenkins using the password generated during setup
 
 
 ![EC2 Setup Step 13](img/13.JPG)
