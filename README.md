@@ -99,7 +99,7 @@ $ docker exec -it 98760878abree bash
 
 Now that we have setup our EC2 server, Docker, and Jenkins, let's create a simple Jenkins pipeline.
 
-Before creating the pipeline, ensure your Git repository is up to date. Use the following links to update:
+Before creating the pipeline, ensure your Git repository is up to date. Use the following links to update.
 
 
 - 💾 [Simple CICD Project Repo](https://github.com/waseemuddin/simple-cicd-project01.git)
