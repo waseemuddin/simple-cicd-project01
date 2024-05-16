@@ -187,7 +187,7 @@ pipeline {
             }
             
         }
-        stage("Container Creating") { # last step is to fetch the lastet or recent image and create docker container automatically.
+        stage("Container Creating") { # last step is to fetch the latest or recent image and create docker container automatically.
             steps {
                 sh 'docker run -itd --name todoapp -p 3000:3000 waseem63/mydockerapp:latest'
             
