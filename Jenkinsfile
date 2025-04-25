@@ -9,6 +9,7 @@ pipeline {
         }
         stage("image build") {
             steps {
+                echo "image building....."
                 sh 'docker image build -t waseem63/mydockerapp:v$BUILD_ID .'
                 sh 'docker image tag waseem63/mydockerapp:v$BUILD_ID waseem63/mydockerapp:latest'
             }
